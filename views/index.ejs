@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <h1><%= token %></h1>
+    <p>Welcome to <%= title %></p>
+
+    <table>
+      <tr>
+        <th>UserID: </th>
+        <th>Id: </th>
+        <th>Title: </th>
+        <th>Body: </th>
+      </tr>
+
+        <% for(let i=0; i < array[token].length; i++){%>
+      <tr>
+          <td><%= resultados[token].userId %></td>
+          <td><%= resultados[token].id %></td>
+          <td><%= resultados[token].title %></td>
+          <td><%= resultados[token].body%></td>
+      </tr>
+        <% } %>
+    </table>
+
+    <div>
+
+      <form action="/" method="post">
+      <% if(token < 19){ %>
+        <input type="submit" value="Siguiente ..." name="siguiente">
+      <% }else{ %>
+          
+      <% }%>
+      </form>
+
+      <form action="/" method="post">
+      <% if(token <= 0){ %>
+        
+      <% }else{ %>
+          <input type="submit" value="Atras ..." name="atras">
+      <% }%>
+      </form>
+    </div>
+
+  </body>
+</html>
